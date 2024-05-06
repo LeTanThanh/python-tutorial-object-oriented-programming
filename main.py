@@ -9,6 +9,10 @@ class Person:
   def greet(self):
     return f"Hi, It's {self.name}"
 
+  @classmethod
+  def create_anonymous(cls):
+    return Person("Anonymous", 22)
+
 if __name__ == "__main__":
   # Define a class
 
@@ -31,8 +35,13 @@ if __name__ == "__main__":
 
   # Define class attributes
 
-  print(Person.counter)
+  # print(Person.counter)
 
-  person = Person("John", 25)
-  print(Person.counter)
-  print(person.counter)
+  # person = Person("John", 25)
+  # print(Person.counter)
+  # print(person.counter)
+
+  # Define class method
+
+  anonymous = Person.create_anonymous()
+  print(anonymous.name)
