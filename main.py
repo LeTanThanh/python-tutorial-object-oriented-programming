@@ -1,2 +1,8 @@
+class Person:
+  pass
+
 if __name__ == "__main__":
-  print("Python Object-oriented Programming")
+  # Define a class
+
+  person = Person()
+  print(type(person))
