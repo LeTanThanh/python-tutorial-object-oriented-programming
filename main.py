@@ -45,3 +45,16 @@ if __name__ == "__main__":
 
   anonymous = Person.create_anonymous()
   print(anonymous.name)
+
+  # Define static method
+
+  class TemperatureConverter:
+    @staticmethod
+    def celsius_to_fahrenheit(celsius):
+      return 32 + celsius * 1.8
+
+    @staticmethod
+    def fahrenheit_to_celsius(fahrenheit):
+      return (fahrenheit - 32) / 1.8
+
+  print(TemperatureConverter.celsius_to_fahrenheit(30))
