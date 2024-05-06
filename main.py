@@ -13,6 +13,14 @@ class Person:
   def create_anonymous(cls):
     return Person("Anonymous", 22)
 
+class Empolyee(Person):
+  def __init__(self, name, age, job_title):
+    super().__init__(name, age)
+    self.job_title = job_title
+
+  def greet(self):
+    return super().greet() + f"I'm a {self.job_title}"
+
 if __name__ == "__main__":
   # Define a class
 
@@ -43,18 +51,23 @@ if __name__ == "__main__":
 
   # Define class method
 
-  anonymous = Person.create_anonymous()
-  print(anonymous.name)
+  # anonymous = Person.create_anonymous()
+  # print(anonymous.name)
 
   # Define static method
 
-  class TemperatureConverter:
-    @staticmethod
-    def celsius_to_fahrenheit(celsius):
-      return 32 + celsius * 1.8
+  # class TemperatureConverter:
+  #   @staticmethod
+  #   def celsius_to_fahrenheit(celsius):
+  #     return 32 + celsius * 1.8
 
-    @staticmethod
-    def fahrenheit_to_celsius(fahrenheit):
-      return (fahrenheit - 32) / 1.8
+  #   @staticmethod
+  #   def fahrenheit_to_celsius(fahrenheit):
+  #     return (fahrenheit - 32) / 1.8
 
-  print(TemperatureConverter.celsius_to_fahrenheit(30))
+  # print(TemperatureConverter.celsius_to_fahrenheit(30))
+
+  # Single inheritance
+
+  empolyee = Empolyee("John", 25, "Python Developer")
+  print(empolyee.greet())
